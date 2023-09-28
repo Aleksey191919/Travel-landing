@@ -1,0 +1,398 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;900&family=Lora:wght@700&family=Quicksand:wght@400;500;700&family=Roboto+Slab:wght@700&display=swap');
+
+@font-face {
+    font-family: 'icomoon';
+    src:  url('../fonts/icomoon.eot?2hypyb');
+    src:  url('../fonts/icomoon.eot?2hypyb#iefix') format('embedded-opentype'),
+      url('../fonts/icomoon.ttf?2hypyb') format('truetype'),
+      url('../fonts/icomoon.woff?2hypyb') format('woff'),
+      url('../fonts/icomoon.svg?2hypyb#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
+  
+  $white: #fff;
+  $white40: rgba(255, 255, 255, 0.4);
+  $grey: #333;
+  $dark: #000;
+  $dark85: rgba(0, 0, 0, 0.85);
+  $dark50: rgba(0, 0, 0, 0.5);
+  $green: #1ed400;
+  $green40: rgba(30, 212, 0, 0.4);
+  $cyan: #027FA5;
+  $white-smoke: #D5D8DB;
+  
+  @mixin Roboto($fs, $fw, $lh){
+    font-family: 'Roboto Slab', serif;
+    font-size: $fs;
+    font-weight: $fw;
+    line-height: $lh;
+  }
+  
+  @mixin Lora($fs, $fw, $lh){
+    font-family: 'Lora', serif;
+    font-size: $fs;
+    font-weight: $fw;
+    line-height: $lh;
+  }
+  
+  @mixin Lato($fs, $fw, $lh){
+    font-family: 'Lato', sans-serif;
+    font-size: $fs;
+    font-weight: $fw;
+    line-height: $lh;
+  }
+  
+  @mixin Quicksand($fs, $fw, $lh){
+    font-family: 'Quicksand', sans-serif;
+    font-size: $fs;
+    font-weight: $fw;
+    line-height: $lh;
+  }
+  
+  @mixin flex($jc, $ai, $gp){
+    display: flex;
+    justify-content: $jc;
+    align-items: $ai;
+    gap: $gp;
+  }
+  
+  *{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-decoration: none;
+    border: none;
+  }
+
+  [class^="icon-"], [class*=" icon-"] {
+    font-family: 'icomoon' !important;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /*Better font rendering*/
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  
+  .icon-facebook:before {
+    content: "\e900";
+  }
+  .icon-twitter:before {
+    content: "\e901";
+  }
+  .icon-vk:before {
+    content: "\e902";
+  }
+  .icon-youtube:before {
+    content: "\e903";
+  }
+
+  .header {
+    @include flex(space-around, center, 0);
+    position: relative;
+    z-index: 999;
+    background: $dark85;
+    padding: 36px 0;
+    position: sticky;
+    top: 0;
+    &__logo {
+        color: $white;
+    }
+    .nav {
+        &__item {
+            &-link {
+                color: $white;
+            }
+        }
+    }
+  }
+
+  .logo {
+    @include Roboto(32px, 700, 32px);
+  }
+
+  .social {
+        &__item {
+            &-link {
+                color: $white;
+            }
+        }
+  }
+
+  .nav {
+    @include flex(center, center, 56px);
+    &__item {
+        &-link {
+            @include Lato(22px, 500, 22px);
+        }
+    }
+  }
+
+  .langBar {
+    @include flex(center, center, 4px);
+  }
+
+  .social {
+    @include flex(center, center, 32px);
+    &__item {
+        &-link {
+            font-size: 24px;
+        }
+    }
+  }
+
+  .btn {
+    background-color: $green;
+    color: $white;
+    text-transform: uppercase;
+    @include Lato(16px, 900, 16px);
+    padding: 21px 110px;
+  }
+  
+  .bg-photo {
+    background: url('../images/bg/bg1.jpg') no-repeat;
+    background-size: cover;
+    min-width: 100%;
+    width: 100%;
+    min-height: 964px;
+    @include flex(center, center, 0);
+    flex-direction: column;
+    margin-top: -119px;
+  }
+
+  .call-to-action {
+    @include flex(center, center, 32px);
+    flex-direction: column;
+    background-color: $dark85;
+    padding: 48px;
+    margin-bottom: 72px;
+  }
+
+  h1 {
+    @include Lora(84px, 700, 100px);
+    color: $white;
+    text-transform: uppercase;
+    text-align: center;
+    width: 105%;
+  }
+
+  span {
+    @include Lato(24px, 400, 24px);
+    color: $white;
+  }
+
+  .content {
+    padding: 134px 80px 124px;
+    @include flex(center, center, 0);
+    flex-direction: column;
+
+    &__h2 {
+      @include Roboto(56px, 700, normal);
+      color: $grey;
+    }
+
+    &__p {
+      @include Quicksand(20px, 500, 32px);
+      color: $grey;
+      margin: 32px 0 64px;
+      text-align: center;
+      width: 88%;
+    }
+
+    &__menu {
+      @include flex(center, flex-start, 0);
+      flex-direction: row;
+      gap: 100px;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    &__menu-item {
+      @include flex(center, center, 0);
+      flex-direction: column;
+      position: relative;
+      z-index: 5;
+      text-align: center;
+    }
+
+    &__item-img {
+      display: inline-block;
+      position: absolute;
+      top: 60px;
+      width: 70%;
+    }
+
+    &__item-span {
+      @include Roboto(100px, 700, normal);
+      color: $green;
+    }
+
+    &__item-p {
+      @include Quicksand(25px, 400, 25px);
+      color: $grey;
+      text-align: center;
+      margin-top: 100px;
+    }
+
+
+  }
+
+  .promo {
+    @include flex(center, center, 0);
+    flex-direction: column;
+    background: url(/images/promo/barcelona.png) no-repeat;
+    background-size: cover;
+    max-width: 100%;
+    width: 100%;
+    min-height: 760px;
+
+    &__header {
+      @include Roboto(56px, 700px,normal );
+      color: $white;
+      text-transform: uppercase;
+    }
+
+    &__h2 {
+    @include Roboto(144px, 700px,144px );
+    color: $white;
+    text-transform: uppercase;
+    margin-top: 16px;
+    }
+
+    &__text-date {
+    @include Quicksand(24px, 500px, 18px);
+    color: $white;
+    text-transform: uppercase;
+    margin-top: 16px;
+    }
+
+    &__text {
+    @include Quicksand(24px, 400px, 32px);
+    color: $white;
+    text-align: center;
+    width: 80%;
+    margin: 32px 0 16px;
+    }
+
+    &__text-discount {
+     @include Quicksand(28px, 500px, 32px);
+    color: $white;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 40px 0 43px;
+    }
+
+    .border {
+      border: solid 1px #dddbdb;
+      width: 20%;
+      color: $white;
+    }
+  }
+
+  .slider {
+    @include flex(center, center, 0);
+    flex-direction: column;
+    padding: 124px 80px 72px;
+
+    &__list {
+      @include flex(center, center, 40px);
+      flex-direction: row;
+      margin-bottom: 70px;
+    }
+
+    &__list-item {
+      width: 33.3%;
+      position: relative;
+    }
+
+    &__photo {
+      display: inline-block;
+      max-width: 98%;
+    }
+
+    &__header {
+     @include Roboto(56px, 70px, normal);
+     margin-bottom: 48px;
+     text-transform: uppercase;
+    }
+
+    &__text {
+     @include Roboto (18px, 400px, 18px);
+     color: $white;
+     padding: 5px 8px;
+     position: absolute;
+     top: 15px;
+     background: $dark85;
+    }
+
+    &__text-social {
+      @include Quicksand(14px, 500, 18px);
+      color: $grey;
+      text-align: center;
+      display: inline-block;
+      margin: 8px 0;
+    }
+  }
+
+  .travel-container {
+    background: url('/images/bg/fish.png') no-repeat;
+
+    .travel {
+      @include flex(center, center, 0);
+      flex-direction: column;
+      background: rgba(30, 212, 0, 0.40);
+      padding: 48px 0 64px;
+
+      &__text {
+        @include Lato(14px, 500, normal);
+        color: $white;
+        padding: 4px 8px;
+        position: absolute;
+        top: 10px;
+        background: $dark85;
+      }
+
+      .slider {
+        padding: 0 80px;
+        
+        &__list {
+          margin-bottom: 0;
+        }
+      }
+
+      .slider__header {
+        color: $white;
+      }
+
+    }
+  
+  }
+
+  .footer {
+    @include flex(space-around, center, 0);
+    background: url('../images/bg/mountains.png') no-repeat;
+    background-size: cover;
+    padding: 96px 0;
+    &__logo {
+        color: $dark;
+    }
+
+    .nav {
+        &__item {
+            &-link {
+                color: $dark;
+            }
+        }
+    }
+    .dark {
+      color: $dark;
+    }
+}
+
+
+
